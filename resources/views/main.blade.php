@@ -44,6 +44,9 @@
                     <li>
                         <a href="{{ url('programs') }}"> <i class="menu-icon fa fa-dashboard"></i>Program </a>
                     </li>
+                    <li>
+                        <a href="{{ url('pelajaran') }}"> <i class="menu-icon fa fa-dashboard"></i>Pelajaran </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

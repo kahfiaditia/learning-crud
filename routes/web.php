@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EdulevelController;
+use App\Http\Controllers\PelajaranController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +28,4 @@ Route::get('home', function () {
 Route::get('edulevels', [EdulevelController::class, 'data']);
 Route::get('edulevels/add', [EdulevelController::class, 'add']);
 Route::post('edulevels', [EdulevelController::class, 'addProcess']);
+Route::get('pelajaran',[PelajaranController::class, 'lihat']);
