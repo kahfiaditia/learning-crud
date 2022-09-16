@@ -66,12 +66,13 @@
                                         <a href="{{ url('edulevels/edit/'.$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class="fa fa-pencil"></i>
                                         </a>
-                                        <a href="" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
+                                        <form action ="{{ url('edulevels/'.$item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Yakin akan di hapus?')">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -50,5 +50,11 @@ class PelajaranController extends Controller
         return redirect('pelajaran')->with('status','Data Pelajaran Berhasil di update');
     }
 
+    public function hapus($id)
+    {
+        \DB::table('pelajaran')->where('id', $id)->delete();
+        return redirect('pelajaran')->with('status','Data Pelajaran Berhasil dihapus');
+    }
+
 
 }

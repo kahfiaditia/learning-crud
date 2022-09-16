@@ -30,9 +30,11 @@ Route::get('edulevels/add', [EdulevelController::class, 'add']);
 Route::post('edulevels', [EdulevelController::class, 'addProcess']);
 Route::get('edulevels/edit/{id}', [EdulevelController::class, 'edit']);
 Route::patch('edulevels/{id}',[EdulevelController::class,'OnProses']);
+Route::delete('edulevels/{id}',[EdulevelController::class,'delete']);
 
 Route::get('pelajaran',[PelajaranController::class, 'pelajaran']);
 Route::get('pelajaran/input',[PelajaranController::class, 'input']);
 Route::post('pelajaran',[PelajaranController::class, 'proses']);
 Route::get('pelajaran/edit/{id}', [PelajaranController::class, 'edit']);
 Route::patch('pelajaran/{id}', [PelajaranController::class, 'ProsesEdit']);
+Route::delete('pelajaran/{id}', [PelajaranController::class, 'hapus']);
