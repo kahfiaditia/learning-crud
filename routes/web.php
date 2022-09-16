@@ -28,4 +28,7 @@ Route::get('home', function () {
 Route::get('edulevels', [EdulevelController::class, 'data']);
 Route::get('edulevels/add', [EdulevelController::class, 'add']);
 Route::post('edulevels', [EdulevelController::class, 'addProcess']);
-Route::get('pelajaran',[PelajaranController::class, 'lihat']);
+
+Route::get('pelajaran',[PelajaranController::class, 'pelajaran']);
+Route::get('pelajaran/input',[PelajaranController::class, 'input']);
+Route::post('pelajaran',[PelajaranController::class, 'proses']);
