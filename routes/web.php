@@ -28,8 +28,8 @@ Route::get('home', function () {
 Route::get('edulevels', [EdulevelController::class, 'data']);
 Route::get('edulevels/add', [EdulevelController::class, 'add']);
 Route::post('edulevels', [EdulevelController::class, 'addProcess']);
-
-
+Route::get('edulevels/edit/{id}', [EdulevelController::class, 'edit']);
+Route::patch('edulevels/{id}',[EdulevelController::class,'OnProses']);
 
 Route::get('pelajaran',[PelajaranController::class, 'pelajaran']);
 Route::get('pelajaran/input',[PelajaranController::class, 'input']);
