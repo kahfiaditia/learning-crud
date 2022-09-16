@@ -42,10 +42,10 @@
                         <a href="{{ url('edulevels') }}"> <i class="menu-icon fa fa-dashboard"></i>Edulevels </a>
                     </li>
                     <li>
-                        <a href="{{ url('programs') }}"> <i class="menu-icon fa fa-dashboard"></i>Program </a>
+                        <a href="{{ url('pelajaran') }}"> <i class="menu-icon fa fa-dashboard"></i>Pelajaran </a>
                     </li>
                     <li>
-                        <a href="{{ url('pelajaran') }}"> <i class="menu-icon fa fa-dashboard"></i>Pelajaran </a>
+                        <a href="{{ url('programs') }}"> <i class="menu-icon fa fa-dashboard"></i>Program </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

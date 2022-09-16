@@ -24,6 +24,13 @@ class EdulevelController extends Controller
 
    public function addProcess(Request $request)
    {
+      //validation
+      $request->validate([
+         'name' => 'required|min:2',
+         'desc' => 'required'
+      ]);
+      //endvalidation
+
       \DB::table('edulevels')->insert([
          'name' => $request->name,
          'desc' => $request->desc
@@ -33,6 +40,7 @@ class EdulevelController extends Controller
 
    public function edit($id)
    {
+      
       $edulevel = \DB::table('edulevels')->where('id', $id)->first();
       //dd($edulevel);
       return view('edulevel/edit', compact('edulevel'));
@@ -40,6 +48,13 @@ class EdulevelController extends Controller
 
    public function Onproses(Request $request, $id)
    {
+      //validation
+      $request->validate([
+         'name' => 'required|min:2',
+         'desc' => 'required'
+      ]);
+      //endvalidation
+      
       $edulevel = \DB::table('edulevels')->where('id',$id)
       ->update([
          'name' => $request->name,
