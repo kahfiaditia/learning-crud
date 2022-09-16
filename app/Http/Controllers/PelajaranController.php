@@ -31,4 +31,24 @@ class PelajaranController extends Controller
         return redirect('pelajaran')->with('status','Data Pelajaran Berhasil di Input');
     }
 
+    public function edit($id)
+    {
+        $pelajaran =\DB::table('pelajaran')->where('id',$id)->first();
+        //dd($pelajaran);
+        return view('pelajaran.edit', compact('pelajaran'));
+    }
+
+    public function ProsesEdit(Request $request, $id)
+    {
+        $pelajaran =\DB::table('pelajaran')->where('id',$id)
+        
+        ->update([
+            'nama_pelajaran' => $request->nama_pelajaran,
+            'kelas' => $request->kelas,
+            'desc' => $request->desc
+        ]);
+        return redirect('pelajaran')->with('status','Data Pelajaran Berhasil di update');
+    }
+
+
 }

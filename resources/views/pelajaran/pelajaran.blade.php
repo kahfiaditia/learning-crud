@@ -65,7 +65,7 @@
                                     <td>{{ $item->kelas }}</td>
                                     <td>{{ $item->desc }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('pelajaran/edit') }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('pelajaran/edit/'.$item->id) }}" class="btn btn-primary btn-sm">
                                             <i class="fa fa-pencil"></i>
                                         </a>
                                         <a href="" class="btn btn-primary btn-sm">
