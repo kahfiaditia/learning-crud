@@ -28,6 +28,9 @@ class EdulevelController extends Controller
       $request->validate([
          'name' => 'required|min:2',
          'desc' => 'required'
+      ],
+      [
+         'name.required' => 'Nama jenjang Tidak Boleh Kosong'
       ]);
       //endvalidation
 
@@ -54,7 +57,7 @@ class EdulevelController extends Controller
          'desc' => 'required'
       ]);
       //endvalidation
-      
+
       $edulevel = \DB::table('edulevels')->where('id',$id)
       ->update([
          'name' => $request->name,
