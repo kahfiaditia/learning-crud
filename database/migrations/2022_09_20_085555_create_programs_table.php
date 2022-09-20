@@ -17,6 +17,7 @@ class CreateProgramsTable extends Migration
             $table->id();
             //cara pertama
             // $table->bigInteger('edulevel_id')->unsigned();
+            
             //cara kedua
             $table->foreignId('edulevel_id')->constrained('edulevels')->OnDelete('cascade')->onUpdate('cascade');
             $table->string('name',100);
