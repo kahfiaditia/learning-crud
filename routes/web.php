@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EdulevelController;
 use App\Http\Controllers\PelajaranController;
-
+use App\Http\Controllers\ProgramController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +38,5 @@ Route::post('pelajaran',[PelajaranController::class, 'proses']);
 Route::get('pelajaran/edit/{id}', [PelajaranController::class, 'edit']);
 Route::patch('pelajaran/{id}', [PelajaranController::class, 'ProsesEdit']);
 Route::delete('pelajaran/{id}', [PelajaranController::class, 'hapus']);
+
+Route::resource('programs', ProgramController::class);
