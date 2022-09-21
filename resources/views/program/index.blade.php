@@ -40,7 +40,7 @@
                         <strong>Data Programs</strong>
                     </div>
                     <div class="pull-right">
-                        <a href="{{ url('programs/add') }}" class="btn btn-success btn-sm">
+                        <a href="{{ url('programs/create') }}" class="btn btn-success btn-sm">
                             <i class="fa fa-plus"></i> Add
                         </a>
                     </div>
@@ -53,7 +53,6 @@
                                 <th>No</th>
                                 <th>Nama Programs</th>
                                 <th>Jenjang</th>
-                                <th>Info</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -63,9 +62,11 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->edulevel->name }}</td>
-                                    <td>{{ $item->info }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('edulevels/edit/'.$item->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('programs/'.$item->id) }}" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a href="{{ url('programs/edit/'.$item->id) }}" class="btn btn-warning btn-sm">
                                             <i class="fa fa-pencil"></i>
                                         </a>
                                         <form action ="{{ url('edulevels/'.$item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Yakin akan di hapus?')">

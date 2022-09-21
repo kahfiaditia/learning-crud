@@ -14,8 +14,9 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        $programs = Program::all(); //nama Program di ambil dari class Model
-        //return $programs;
+        $programs = Program::with('edulevel')->get();
+        //$programs = Program::all(); //nama Program di ambil dari class Model
+        // return $programs;
         return view('program.index',compact('programs'));
     }
 
@@ -46,9 +47,16 @@ class ProgramController extends Controller
      * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function show(Program $program)
+    public function show(Program $program) //ini pake route model binding //ini klo manual// public function show($id)
     {
-        //
+        //$program = $program::find($id);
+
+        //$program = $program::where('id', $id)->get(); // jika pake where ini harus pake yang dibawah
+        //$program = $program[0]; // jika pake where ini harus pake yang dibawah
+        $program->makeHidden(['edulevel_id']); // untuk menghiden data yang tampil di fungsi show Program, jika multi pake array, jika satu boleh tidak
+        //return $program;
+
+        return view ('program.show',compact('program'));  //compact('program') diambil dari data diatasnya
     }
 
     /**
