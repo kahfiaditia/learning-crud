@@ -44,7 +44,7 @@
                         </div>
                         <div class="pull-right">
                             <a href="{{ url('programs') }}" class="btn btn-default btn-sm">
-                                <i class="fa fa-plus"></i> Back
+                                <i class="fa fa-forward"></i> Back
                             </a>
                         </div>
                     </div>
