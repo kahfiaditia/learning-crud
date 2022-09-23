@@ -115,7 +115,10 @@ class ProgramController extends Controller
      */
     public function edit(Program $program)
     {
-        //
+        $edulevels = Edulevels::all();
+        return view ('program.edit',compact('program','edulevels'));
+
+        // public function edit hanya untukmenampilakan form edit, untuk prosesnya di update
     }
 
     /**
@@ -127,7 +130,28 @@ class ProgramController extends Controller
      */
     public function update(Request $request, Program $program)
     {
-        //
+        // return $request;
+        $request->validate([
+            'name' => 'required|min:7',
+            'edulevel_id' => 'required'
+         ], [
+            'edulevel_id.required' => 'Jenjang Tidak Boleh Kosong.'
+         ]);
+        
+        // // //return $request;
+
+        // // //cara pertama
+            // $programs = Programs::find($id);
+            $programs->edulevel_id = $request->edulevel_id;
+            $programs->name = $request->name;
+            $programs->student_price = $request->student_price;
+            $programs->student_max = $request->student_max;
+            $programs->info = $request->info;
+            $programs->save();
+
+        // //     //return $request;
+        return redirect('programs')->with('status', 'Data Programs Berhasil di Update');
+
     }
 
     /**
