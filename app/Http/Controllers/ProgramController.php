@@ -142,15 +142,24 @@ class ProgramController extends Controller
 
         // // //cara pertama
             // $programs = Programs::find($id);
-            $programs->edulevel_id = $request->edulevel_id;
-            $programs->name = $request->name;
-            $programs->student_price = $request->student_price;
-            $programs->student_max = $request->student_max;
-            $programs->info = $request->info;
-            $programs->save();
-
-        // //     //return $request;
-        return redirect('programs')->with('status', 'Data Programs Berhasil di Update');
+            // $programs = Program::find($id);
+           
+            // $programs->name = $request->name;
+            // $programs->edulevel_id = $request->edulevel_id;
+            // $programs->student_price = $request->student_price;
+            // $programs->student_max = $request->student_max;
+            // $programs->info = $request->info;
+            // $programs->save();
+            Program::where('id',$program->id)
+            ->update([
+                    'name'=> $request->name,
+                    'edulevel_id'=> $request->edulevel_id,
+                    'student_price'=> $request->student_price,
+                    'student_max'=> $request->student_max,
+                    'info'=> $request->info
+            ]);
+            //return $request;
+            return redirect('programs')->with('status', 'Data Programs Berhasil di Update');
 
     }
 
