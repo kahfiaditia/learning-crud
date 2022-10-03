@@ -118,7 +118,7 @@ class ProgramController extends Controller
         $edulevels = Edulevels::all();
         return view ('program.edit',compact('program','edulevels'));
 
-        // public function edit hanya untukmenampilakan form edit, untuk prosesnya di update
+        // public function edit hanya untuk menampilakan form edit, untuk prosesnya di update
     }
 
     /**
